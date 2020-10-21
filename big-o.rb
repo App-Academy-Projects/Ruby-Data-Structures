@@ -13,3 +13,22 @@ def sluggish_octopus
 end
 
 p sluggish_octopus
+
+def dominant_octopus
+    # O(N log(N))
+    len = Fishes.length
+    longest_fish = ""
+    i = 0
+    while i < len
+        j = len - 1
+        current_fish_len = Fishes[i].length
+        while j > 0
+            longest_fish = Fishes[i] if current_fish_len > Fishes[j].length
+            j /= 2
+        end
+        i += 1
+    end
+    longest_fish
+end
+
+p dominant_octopus
