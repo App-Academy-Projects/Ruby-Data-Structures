@@ -58,3 +58,17 @@ tiles_array = ["up", "right-up", "right", "right-down", "down", "left-down", "le
 p slow_dance("up", tiles_array)
 
 p slow_dance("right-down", tiles_array)
+
+def fast_dance(word, tiles_hash)
+    return tiles_hash[word]
+end
+
+# Test 
+
+hash_tiles_array = Hash.new
+tiles_array.each_with_index do |w, i|
+    hash_tiles_array[w] = i
+end
+p fast_dance("up", hash_tiles_array)
+
+p fast_dance("right-down", hash_tiles_array)
