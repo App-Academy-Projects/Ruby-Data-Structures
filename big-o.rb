@@ -44,3 +44,17 @@ def clever_octopus
 end
 
 p clever_octopus
+
+
+# Dancing Octopus
+def slow_dance(word, search_arr)
+    search_arr.each_with_index do |w, i|
+        return i if w == word
+    end
+end
+
+tiles_array = ["up", "right-up", "right", "right-down", "down", "left-down", "left",  "left-up" ]
+
+p slow_dance("up", tiles_array)
+
+p slow_dance("right-down", tiles_array)
