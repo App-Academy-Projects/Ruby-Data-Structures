@@ -32,3 +32,15 @@ def dominant_octopus
 end
 
 p dominant_octopus
+
+
+def clever_octopus
+    # O(N)
+    longest_fish = ""
+    Fishes.each do |fish|
+        longest_fish = fish if fish.length > longest_fish.length
+    end
+    longest_fish
+end
+
+p clever_octopus
