@@ -21,3 +21,17 @@ def my_min2(list)
 end
 
 p my_min2(list)  # =>  -5
+
+
+
+def sub_arrays_of(list)
+    sub_arrs = []
+    len = list.length
+    (0...len).each do |i|
+        (0...len).each do |j|
+            sub_arr = list[i..j]
+            sub_arrs << sub_arr unless sub_arr == []
+        end
+    end
+    sub_arrs
+end
