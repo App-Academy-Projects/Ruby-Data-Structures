@@ -11,3 +11,13 @@ end
 
 list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 p my_min(list)  # =>  -5
+
+def my_min2(list)
+    smallest_num = Float::INFINITY
+    list.each do |n|
+        smallest_num = n if n < smallest_num
+    end
+    smallest_num
+end
+
+p my_min2(list)  # =>  -5
