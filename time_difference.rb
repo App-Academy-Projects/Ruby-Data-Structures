@@ -25,6 +25,7 @@ p my_min2(list)  # =>  -5
 
 
 def sub_arrays_of(list)
+    # O(N^2)
     sub_arrs = []
     len = list.length
     (0...len).each do |i|
@@ -35,3 +36,20 @@ def sub_arrays_of(list)
     end
     sub_arrs
 end
+
+def largest_contiguous_subsum(list)
+    # O(N*M)
+    sub_arrs = sub_arrays_of(list)
+    sums = []
+    sub_arrs.each do |sub_arr| ## O(N*M)
+        sums << sub_arr.sum
+    end
+    # Get the max of the sums array
+    sums.max # O(N)
+end
+
+list = [5, 3, -7]
+p largest_contiguous_subsum(list) # => 8 (from [7, -6, 7])
+
+list = [-5, -1, -3]
+p largest_contiguous_subsum(list) # => -1 (from [-1])
