@@ -30,3 +30,17 @@ end
 
 p okay_two_sum?(arr, 6) # => should be true
 p okay_two_sum?(arr, 10) # => should be false
+
+
+def perfect_two_sum?(arr, target_sum)
+    complements = {}
+    arr.each_with_index do |el, i|
+        complement, _ = complements[target_sum - el]
+        return true if complement
+        complements[el] = [el, i]
+    end
+    false
+end
+
+p perfect_two_sum?(arr, 6) # => should be true
+p perfect_two_sum?(arr, 10) # => should be false
