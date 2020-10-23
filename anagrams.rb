@@ -42,6 +42,7 @@ p third_anagram?("live", "vile")
 p third_anagram?("that's ok", "thats ok")
 
 
+# O(N)
 def fourth_anagram?(str1, str2)
     str1_hash = Hash.new(0) # O(1)
     str2_hash = Hash.new(0) # O(1)
