@@ -9,3 +9,18 @@ def first_anagram?(str1, str2)
 end
 
 p first_anagram?("elvis", "lives")
+
+
+def second_anagram?(str1, str2)
+    return false if str1.length != str2.length
+    str2_arr = str2.chars
+    str1.each_char do |c|
+        ind = str2_arr.find_index(c)
+        str2_arr.delete_at(ind) unless ind.nil?
+    end
+    return true if str2_arr.empty?
+    false
+end
+
+p second_anagram?("lives", "ivels")
+p second_anagram?("hello", "ollhs")
