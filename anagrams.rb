@@ -11,12 +11,13 @@ end
 p first_anagram?("elvis", "lives")
 
 
+# O(N^2)
 def second_anagram?(str1, str2)
-    return false if str1.length != str2.length
-    str2_arr = str2.chars
-    str1.each_char do |c|
-        ind = str2_arr.find_index(c)
-        str2_arr.delete_at(ind) unless ind.nil?
+    return false if str1.length != str2.length # O(1)
+    str2_arr = str2.chars # O(N)
+    str1.each_char do |c| # O(N)
+        ind = str2_arr.find_index(c) # O(log(N))
+        str2_arr.delete_at(ind) unless ind.nil? # O(N)
     end
     return true if str2_arr.empty?
     false
