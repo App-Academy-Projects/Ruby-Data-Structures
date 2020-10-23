@@ -17,7 +17,8 @@ p bad_two_sum?(arr, 6) # => should be true
 p bad_two_sum?(arr, 10) # => should be false
 
 
-# O(N)
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def okay_two_sum?(arr, target_sum)
     sorted_arr = arr.dup.sort! # O(N)
     len = arr.length
