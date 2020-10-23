@@ -17,11 +17,12 @@ p bad_two_sum?(arr, 6) # => should be true
 p bad_two_sum?(arr, 10) # => should be false
 
 
+# O(N)
 def okay_two_sum?(arr, target_sum)
-    sorted_arr = arr.dup.sort!
+    sorted_arr = arr.dup.sort! # O(N)
     len = arr.length
-    (0...len-1).each do |i|
-        return true if target_sum == arr[i] + arr[i-1]
+    (0...len-1).each do |i| # O(N)
+        return true if target_sum == arr[i] + arr[i-1] # O(1)
     end
     false
 end
