@@ -40,3 +40,25 @@ end
 
 p third_anagram?("live", "vile")
 p third_anagram?("that's ok", "thats ok")
+
+
+def fourth_anagram?(str1, str2)
+    str1_hash = Hash.new(0)
+    str2_hash = Hash.new(0)
+
+    str1.each_char do |c|
+        str1_hash[c] += 1
+    end
+
+    str2.each_char do |c|
+        str2_hash[c] += 1
+    end
+
+    str1_hash.each do |k, v|
+        return false unless v == str2_hash[k]
+    end
+    true
+end
+
+p fourth_anagram?("gizmo", "sally")
+p fourth_anagram?("elvis", "lives")
