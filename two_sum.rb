@@ -32,12 +32,14 @@ p okay_two_sum?(arr, 6) # => should be true
 p okay_two_sum?(arr, 10) # => should be false
 
 
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def perfect_two_sum?(arr, target_sum)
     complements = {}
-    arr.each_with_index do |el, i|
-        complement, _ = complements[target_sum - el]
-        return true if complement
-        complements[el] = [el, i]
+    arr.each_with_index do |el, i| # O(N)
+        complement, _ = complements[target_sum - el] # O(1)
+        return true if complement # O(1)
+        complements[el] = [el, i] # O(1)
     end
     false
 end
