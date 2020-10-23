@@ -22,8 +22,9 @@ p bad_two_sum?(arr, 10) # => should be false
 def okay_two_sum?(arr, target_sum)
     sorted_arr = arr.sort # O(N log(N))
     len = arr.length
-    (0...len-1).each do |i| # O(N)
-        return true if target_sum == arr[i] + arr[i-1] # O(1)
+    (0...len).each do |i| # O(N)
+        ind = sorted_arr.bsearch_index { |el| (target_sum - sorted_arr[i]) <=> el }
+        return true unless ind.nil? || ind == i # O(1)
     end
     false
 end
