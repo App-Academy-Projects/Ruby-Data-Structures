@@ -25,3 +25,17 @@ end
 
 p second_anagram?("lives", "ivels")
 p second_anagram?("hello", "ollhs")
+
+
+def third_anagram?(str1, str2)
+    str1_arr = str1.chars
+    str2_arr = str2.chars
+
+    # Sort the 2 arrays
+    str1_arr.sort!
+    str2_arr.sort!
+    return str1_arr == str2_arr
+end
+
+p third_anagram?("live", "vile")
+p third_anagram?("that's ok", "thats ok")
