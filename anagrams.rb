@@ -43,18 +43,18 @@ p third_anagram?("that's ok", "thats ok")
 
 
 def fourth_anagram?(str1, str2)
-    str1_hash = Hash.new(0)
-    str2_hash = Hash.new(0)
+    str1_hash = Hash.new(0) # O(1)
+    str2_hash = Hash.new(0) # O(1)
 
-    str1.each_char do |c|
+    str1.each_char do |c| # O(N)
         str1_hash[c] += 1
     end
 
-    str2.each_char do |c|
+    str2.each_char do |c| # O(N)
         str2_hash[c] += 1
     end
 
-    str1_hash.each do |k, v|
+    str1_hash.each do |k, v| # O(N)
         return false unless v == str2_hash[k]
     end
     true
