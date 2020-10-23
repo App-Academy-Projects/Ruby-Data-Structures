@@ -27,13 +27,14 @@ p second_anagram?("lives", "ivels")
 p second_anagram?("hello", "ollhs")
 
 
+# O(N log(N))
 def third_anagram?(str1, str2)
-    str1_arr = str1.chars
-    str2_arr = str2.chars
+    str1_arr = str1.chars # O(N)
+    str2_arr = str2.chars # O(N)
 
     # Sort the 2 arrays
-    str1_arr.sort!
-    str2_arr.sort!
+    str1_arr.sort! # O(N log(N))
+    str2_arr.sort! # O(N log(N))
     return str1_arr == str2_arr
 end
 
