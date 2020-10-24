@@ -1,10 +1,12 @@
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def windowed_max_range(arr, w)
     current_max_range = nil
     len = arr.length
-    (0..len-w).each do |i|
-        window = arr[i...i+w]
-        min = window.min
-        max = window.max
+    (0..len-w).each do |i| # O(N)
+        window = arr[i...i+w] # O(N)
+        min = window.min # O(N)
+        max = window.max # O(N)
         current_max_range ||= window
         if (max - min) > current_max_range[-1] - current_max_range[0]
             current_max_range = window
