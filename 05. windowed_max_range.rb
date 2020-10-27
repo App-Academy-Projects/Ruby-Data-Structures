@@ -155,5 +155,7 @@ class MinMaxStackQueue
         @in_stack.empty? && @out_stack.empty?
     end
         
+    def enqueue(val)
+        @in_stack.push(val)
     end
 end
