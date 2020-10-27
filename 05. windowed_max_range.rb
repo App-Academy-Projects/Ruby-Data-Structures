@@ -113,4 +113,8 @@ class MinMaxStack
     def max
         @store.peek[:max] unless empty?
     end
+
+    def min
+        @store.pop[:min] unless empty?
+    end
 end
