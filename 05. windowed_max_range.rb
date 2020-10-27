@@ -134,4 +134,8 @@ class MinMaxStack
     def new_max(el)
         empty? ? el : [max, el].max
     end
+
+    def new_min(el)
+        empty? ? el : [min, el].min
+    end
 end
