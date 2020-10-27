@@ -129,4 +129,9 @@ class MinMaxStack
             val: el
         })
     end
+
+    private
+    def new_max(el)
+        empty? ? el : [max, el].max
+    end
 end
