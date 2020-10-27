@@ -105,4 +105,8 @@ class MinMaxStack
     def empty?
         @store.empty?
     end
+
+    def size
+        @store.size
+    end
 end
