@@ -162,4 +162,11 @@ class MinMaxStackQueue
     def dequeue
         @out_stack.pop unless empty?
     end
+
+    def max
+        maxs = []
+        maxs << @in_stack.max unless @in_stack.empty?
+        maxs << @out_stack.max unless @out_stack.empty?
+        maxs.max
+    end
 end
