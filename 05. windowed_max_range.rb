@@ -169,4 +169,11 @@ class MinMaxStackQueue
         maxs << @out_stack.max unless @out_stack.empty?
         maxs.max
     end
+
+    def min
+        mins = []
+        mins << @in_stack.min unless @in_stack.empty?
+        mins << @out_stack.min unless @out_stack.empty?
+        mins.min
+    end
 end
