@@ -121,4 +121,12 @@ class MinMaxStack
     def pop
         @store.pop[:val] unless empty?
     end
+
+    def push(el)
+        @store.push ({
+            max: new_max(el),
+            min: new_min(el)
+            val: el
+        })
+    end
 end
