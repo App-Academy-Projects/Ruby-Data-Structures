@@ -101,4 +101,8 @@ class MinMaxStack
     def peek
         @store.peek unless empty?
     end
+
+    def empty?
+        @store.empty?
+    end
 end
