@@ -75,4 +75,8 @@ class StackQueue
         @in_stack = MyStack.new
         @out_stack = MyStack.new
     end
+
+    def size
+        @in_stack.size + @out_stack.size
+    end
 end
