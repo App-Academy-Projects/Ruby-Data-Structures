@@ -115,6 +115,10 @@ class MinMaxStack
     end
 
     def min
-        @store.pop[:min] unless empty?
+        @store.peek[:min] unless empty?
+    end
+
+    def pop
+        @store.pop[:val] unless empty?
     end
 end
