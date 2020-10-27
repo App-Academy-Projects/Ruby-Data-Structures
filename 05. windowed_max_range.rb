@@ -29,4 +29,8 @@ p windowed_max_range([1, 3, 2, 5, 4, 8], 5) # 3, 2, 5, 4, 8
      def peek
          @store.first
      end
+
+     def size
+         @store.length
+     end
  end
