@@ -60,4 +60,8 @@ p windowed_max_range([1, 3, 2, 5, 4, 8], 5) # 3, 2, 5, 4, 8
      def push(el)
          @store.unshift(el)
      end
+
+     def pop
+         @store.pop
+     end
  end
