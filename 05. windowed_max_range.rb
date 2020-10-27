@@ -92,3 +92,9 @@ class StackQueue
         @out_stack.pop unless @out_stack.empty?
     end
 end
+
+class MinMaxStack
+    def initialize
+        @store = MyStack.new
+    end
+end
