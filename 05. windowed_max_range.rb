@@ -69,3 +69,10 @@ p windowed_max_range([1, 3, 2, 5, 4, 8], 5) # 3, 2, 5, 4, 8
          @store.pop
      end
  end
+
+class StackQueue
+    def initialize
+        @in_stack = MyStack.new
+        @out_stack = MyStack.new
+    end
+end
