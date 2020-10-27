@@ -83,4 +83,8 @@ class StackQueue
     def empty?
         @in_stack.empty? && @out_stack.empty?
     end
+
+    def enqueue(el)
+        @in_stack.push(el)
+    end
 end
