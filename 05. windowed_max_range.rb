@@ -97,4 +97,8 @@ class MinMaxStack
     def initialize
         @store = MyStack.new
     end
+
+    def peek
+        @store.peek unless empty?
+    end
 end
