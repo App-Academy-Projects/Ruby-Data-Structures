@@ -79,4 +79,8 @@ class StackQueue
     def size
         @in_stack.size + @out_stack.size
     end
+
+    def empty?
+        @in_stack.empty? && @out_stack.empty?
+    end
 end
