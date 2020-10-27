@@ -139,3 +139,11 @@ class MinMaxStack
         empty? ? el : [min, el].min
     end
 end
+
+
+class MinMaxStackQueue
+    def initialize
+        @in_stack = MinMaxStack.new
+        @out_stack = MinMaxStack.new
+    end
+end
