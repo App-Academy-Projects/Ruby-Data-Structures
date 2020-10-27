@@ -158,4 +158,8 @@ class MinMaxStackQueue
     def enqueue(val)
         @in_stack.push(val)
     end
+    
+    def dequeue
+        @out_stack.pop unless empty?
+    end
 end
