@@ -57,6 +57,10 @@ p windowed_max_range([1, 3, 2, 5, 4, 8], 5) # 3, 2, 5, 4, 8
          @store.last
      end
 
+     def size
+         @store.length
+     end
+
      def empty?
          @store.empty?
      end
@@ -89,7 +93,13 @@ class StackQueue
     end
 
     def dequeue
+        queueify if @out_stack.empty?
         @out_stack.pop unless @out_stack.empty?
+    end
+
+    private
+    def queueify
+        @out_stack.push(@in_stack.pop) until @in_stack.empty?
     end
 end
 
@@ -125,7 +135,7 @@ class MinMaxStack
     def push(el)
         @store.push ({
             max: new_max(el),
-            min: new_min(el)
+            min: new_min(el),
             val: el
         })
     end
@@ -160,6 +170,7 @@ class MinMaxStackQueue
     end
     
     def dequeue
+        queueify if @out_stack.empty?
         @out_stack.pop unless empty?
     end
 
@@ -176,4 +187,29 @@ class MinMaxStackQueue
         mins << @out_stack.min unless @out_stack.empty?
         mins.min
     end
+
+    private
+    def queueify
+        @out_stack.push(@in_stack.pop) until @in_stack.empty?
+    end
 end
+
+
+def max_windowed_range(arr, window_size)
+  queue = MinMaxStackQueue.new
+  best_range = nil
+
+  arr.each_with_index do |el, i|
+    queue.enqueue(el)
+    queue.dequeue if queue.size > window_size
+
+    if queue.size == window_size
+      current_range = queue.max - queue.min
+      best_range = current_range if !best_range || current_range > best_range
+    end
+  end
+
+  best_range
+end
+
+p max_windowed_range([1, 0, 2, 5, 4, 8], 2)
